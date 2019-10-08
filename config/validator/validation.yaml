@@ -1,0 +1,13 @@
+App\Entity\User:
+  properties:
+    name:
+      - NotBlank: ~
+      - Regex: /[a-zA-Z ]+/
+    surname:
+      - NotBlank: ~
+      - Regex: /[a-zA-Z ]+/
+    email:
+      - NotBlank: ~
+      - Email: ~
+    password:
+      - NotBlank: ~

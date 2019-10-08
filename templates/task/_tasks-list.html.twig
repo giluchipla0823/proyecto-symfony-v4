@@ -1,0 +1,33 @@
+{% if tasks | length > 0 %}
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Tarea</th>
+                <th>Prioridad</th>
+                <th>Horas</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td class="text-center">{{ task.id }}</td>
+                <td>{{ task.title }}</td>
+                <td class="text-center">{{ task.priority }}</td>
+                <td class="text-center">{{ task.hours }}</td>
+                <td class="text-center">
+                    <a class="btn btn-secondary" href="{{ path('tasks_detail', {'task': task.id}) }}">Ver</a>
+                    <a class="btn btn-primary" href="{{ path('tasks_edit', {'task': task.id}) }}">Editar</a>
+                    <a class="btn btn-danger" href="">Borrar</a>
+                </td>
+            </tr>
+        {% endfor  %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+    <p>No hay registros</p>
+{% endif %}

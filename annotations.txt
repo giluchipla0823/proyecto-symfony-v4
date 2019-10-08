@@ -1,0 +1,25 @@
+# Login de usuarios
+- En config/packages/security.yaml
+
+  agregar lo siguiente:
+
+  providers:
+          in_memory: { memory: ~ }
+          proveedor:
+              entity:
+                  class: App\Entity\User
+                  property: email
+
+  firewalls:
+          dev:
+              pattern: ^/(_(profiler|wdt)|css|images|js)/
+              security: false
+          main:
+              anonymous: true
+              form_login:
+                  login_path: login
+                  check_path: login
+                  provider: proveedor
+              logout:
+                  path: /logout
+                  target: /login

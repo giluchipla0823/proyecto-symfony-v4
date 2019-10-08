@@ -1,0 +1,10 @@
+parameters:
+  mailer_transport: smtp
+  mailer_host: smtp.mailtrap.io
+  mailer_user: c2467942a7ac2a
+  mailer_password: eef4e12c0e7816
+  mailer_auth_mode: cram-md5
+  mailer_port: 2525
+  mailer_test: hola
+  mailer_noreply:
+    - noreply@mydomain.com

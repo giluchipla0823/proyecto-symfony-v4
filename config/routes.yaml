@@ -1,0 +1,34 @@
+contact:
+    path: /contact
+    controller: App\Controller\ContactController::index
+
+tasks:
+    path: /tasks
+    controller: App\Controller\TaskController::index
+
+tasks_detail:
+    path: /tasks/{task}
+    controller: App\Controller\TaskController::detail
+
+tasks_create:
+    path: /tasks/action/create
+    controller: App\Controller\TaskController::create
+
+tasks_my:
+    path: /tasks/action/my-tasks
+    controller: App\Controller\TaskController::myTasks
+
+tasks_edit:
+    path: /tasks/action/edit/{task}
+    controller: App\Controller\TaskController::update
+
+register:
+    path: /register
+    controller: App\Controller\UserController::register
+
+login:
+    path: /login
+    controller: App\Controller\UserController::login
+
+logout:
+    path: /logout
